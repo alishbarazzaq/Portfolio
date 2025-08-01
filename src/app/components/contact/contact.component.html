@@ -1,0 +1,41 @@
+<section class="contact-section" id="contact">
+  <div class="section-heading">
+    <p class="sub-title">📩 Get in Touch</p>
+    <h2><span>Contact</span> Me</h2>
+  </div>
+
+  <div class="contact-wrapper">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>Let’s Talk</h3>
+      <p>Have a project or question? Feel free to message me anytime.</p>
+
+      <ul>
+        <li><i class="fas fa-envelope"></i> alishbarazzaq342@gmail.com</li>
+        <li><i class="fas fa-phone-alt"></i> 03454299032</li>
+        <li><i class="fas fa-map-marker-alt"></i> Gujrat , Pakistan</li>
+      </ul>
+
+     <div class="contact-socials">
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://linkedin.com/alishbarazzaq" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://github.com/alishbarazzaq" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://www.instagram.com/alishba._.razzaq" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+
+    <div class="contact-form">
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <input type="text" name="name" ngModel placeholder="Your Name" required />
+    <input type="email" name="email" ngModel placeholder="Your Email" required />
+    <textarea name="message" rows="6" ngModel placeholder="Your Message" required></textarea>
+    <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+  </form>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+</div>
+
