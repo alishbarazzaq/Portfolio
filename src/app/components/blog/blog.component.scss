@@ -13,8 +13,7 @@
       font-size: 1rem;
     }
 
-  h2 {
-      
+    h2 {
       font-size: 2.5rem;
 
       span {
@@ -31,33 +30,45 @@
     margin: 0 auto;
 
     .exp-row {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #333;
-  padding-bottom: 15px;
-  padding-top: 10px;
-  transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      padding: 10px 0;
+      transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #1a1a1a;
+      .year {
+        width: 150px;
+        text-align: left;
+      }
 
-    .title {
-      justify-content: c;
-      color: #00d084;
-    }
+      .title {
+        flex: 1;
+        text-align: center;
+      }
 
-    .year {
-      color: #ccc;
-    }
+      .company {
+        width: 150px;
+        text-align: right;
+      }
 
-    .company {
-      color: #4bd8a7;
+      &:hover {
+        background-color: #1a1a1a;
+
+        .title {
+          color: #00d084;
+        }
+
+        .year {
+          color: #00d084;
+        }
+
+        .company {
+          color: #4bd8a7;
+        }
+      }
     }
   }
-}
 
-
-  }
   .experience-skills {
     display: flex;
     justify-content: space-between;
@@ -72,6 +83,12 @@
       padding: 20px;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      border: 1px solid #eee;
+
+      &:hover {
+        transform: translateY(8px);
+      }
 
       img {
         height: 40px;
@@ -88,5 +105,73 @@
       }
     }
   }
-}
 
+  @media (max-width: 992px) {
+    padding: 60px 5%;
+
+    .experience-table .exp-row {
+      flex-direction: column;
+      text-align: center;
+
+      .year,
+      .company {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      .title {
+        margin-bottom: 5px;
+      }
+    }
+
+    .experience-skills {
+      justify-content: center;
+
+      .skill-card {
+        flex: 1 1 140px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 40px 3%;
+
+    .section-heading h2 {
+      font-size: 2rem;
+    }
+
+    .section-heading .sub-title {
+      font-size: 0.9rem;
+    }
+
+    .experience-table .exp-row {
+      gap: 5px;
+      padding: 8px 0;
+
+      .year,
+      .company,
+      .title {
+        font-size: 0.9rem;
+      }
+    }
+
+    .experience-skills {
+      gap: 10px;
+
+      .skill-card {
+        flex: 1 1 120px;
+        padding: 15px;
+
+        img {
+          height: 30px;
+        }
+
+        p strong {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

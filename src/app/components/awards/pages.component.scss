@@ -93,14 +93,66 @@
     }
   }
 
-  // Responsive
-  @media (max-width: 768px) {
-    .award-item {
+  @media (max-width: 992px) {
+    padding: 50px 15px;
+
+    .section-heading h2 {
+      font-size: 2.5rem;
+    }
+
+    .section-heading .sub-title {
+      font-size: 1rem;
+    }
+
+    .awards-grid .award-item {
       grid-template-columns: 1fr;
       text-align: center;
 
       .award-image {
         height: 180px;
+        margin: 0 auto 15px;
+      }
+
+      .award-info h3 {
+        font-size: 1.3rem;
+      }
+
+      .award-info p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 40px 10px;
+
+    .section-heading h2 {
+      font-size: 2rem;
+    }
+
+    .section-heading .sub-title {
+      font-size: 0.95rem;
+    }
+
+    .awards-grid .award-item {
+      padding: 20px 15px;
+      gap: 20px;
+
+      .award-image {
+        height: 160px;
+      }
+
+      .award-info h3 {
+        font-size: 1.1rem;
+      }
+
+      .award-info p {
+        font-size: 0.9rem;
+      }
+
+      .award-info .award-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
       }
     }
   }

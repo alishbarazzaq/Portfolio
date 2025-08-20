@@ -7,11 +7,12 @@
 
     .sub-title {
       color: white;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 1vw, 1rem);
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 2.5vw, 2.5rem);
+
       span {
         color: #00d084;
       }
@@ -38,22 +39,22 @@
       .project-img {
         img {
           width: 100%;
-          height: 200px;
+          height: clamp(180px, 20vw, 200px);
           object-fit: cover;
         }
       }
 
       .project-content {
-        padding: 1rem;
+        padding: clamp(0.8rem, 1vw, 1rem);
 
         h3 {
-            color: white;
-          font-size: 1.2rem;
+          color: white;
+          font-size: clamp(1rem, 1.2vw, 1.2rem);
           margin-bottom: 0.5rem;
         }
 
         p {
-          font-size: 0.95rem;
+          font-size: clamp(0.85rem, 1vw, 0.95rem);
           color: white;
           margin-bottom: 0.5rem;
         }
@@ -64,14 +65,14 @@
           color: #fff;
           padding: 0.25rem 0.75rem;
           border-radius: 20px;
-          font-size: 0.75rem;
+          font-size: clamp(0.65rem, 0.8vw, 0.75rem);
           margin-bottom: 0.75rem;
         }
 
         .view-btn {
           display: inline-block;
           margin-top: 0.5rem;
-          font-size: 0.9rem;
+          font-size: clamp(0.8rem, 0.9vw, 0.9rem);
           color: #00d084;
           border: 1px solid #00d084;
           padding: 0.4rem 1rem;
@@ -86,5 +87,31 @@
         }
       }
     }
+  }
+
+  @media (max-width: 1200px) {
+    padding: 3.5rem 2rem;
+    .projects-grid { gap: 1.8rem; }
+  }
+
+  @media (max-width: 992px) {
+    padding: 3rem 1.5rem;
+    .projects-grid { gap: 1.5rem; }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2.5rem 1rem;
+    .projects-grid { gap: 1.2rem; }
+    .project-card { padding: 0.8rem; }
+  }
+
+  @media (max-width: 576px) {
+    padding: 2rem 0.8rem;
+    .projects-grid { gap: 1rem; }
+    .project-card { padding: 0.6rem; }
+    .project-content h3 { font-size: 1rem; }
+    .project-content p { font-size: 0.85rem; }
+    .project-tag { font-size: 0.65rem; }
+    .view-btn { font-size: 0.8rem; padding: 0.3rem 0.8rem; }
   }
 }

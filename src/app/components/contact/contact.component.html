@@ -12,30 +12,31 @@
 
       <ul>
         <li><i class="fas fa-envelope"></i> alishbarazzaq342@gmail.com</li>
-        <li><i class="fas fa-phone-alt"></i> 03454299032</li>
-        <li><i class="fas fa-map-marker-alt"></i> Gujrat , Pakistan</li>
+        <li><i class="fas fa-phone-alt"></i> 0345 4299032</li>
+        <li><i class="fas fa-map-marker-alt"></i> Gujrat, Pakistan</li>
       </ul>
 
-     <div class="contact-socials">
-          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://linkedin.com/alishbarazzaq" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://github.com/alishbarazzaq" target="_blank"><i class="fab fa-github"></i></a>
-  <a href="https://www.instagram.com/alishba._.razzaq" target="_blank"><i class="fab fa-instagram"></i></a>
+      <button type="button" class="copy-btn" (click)="copyEmail()">📋 Copy Email</button>
+
+      <div class="contact-socials">
+        <a href="https://www.facebook.com/share/p/177a4UNGP2/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/alishba-razzaq-20b37a373/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/alishbarazzaq" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/alishba._.razzaq" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
-
     <div class="contact-form">
-  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-    <input type="text" name="name" ngModel placeholder="Your Name" required />
-    <input type="email" name="email" ngModel placeholder="Your Email" required />
-    <textarea name="message" rows="6" ngModel placeholder="Your Message" required></textarea>
-    <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
-  </form>
-
-  <!-- Success Message -->
-  <div *ngIf="successMessage" class="success-message">
-    {{ successMessage }}
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <input type="text" name="name" ngModel placeholder="Your Name" required />
+        <input type="email" name="email" ngModel placeholder="Your Email" required />
+        <textarea name="message" rows="6" ngModel placeholder="Your Message" required></textarea>
+        
+        <button type="submit" [disabled]="contactForm.invalid || isLoading">
+          {{ isLoading ? 'Sending...' : 'Send Message' }}
+        </button>
+      </form>
+      
+    </div>
   </div>
-</div>
-
+</section>

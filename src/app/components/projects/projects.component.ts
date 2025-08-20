@@ -23,15 +23,13 @@ export class ProjectsComponent implements OnInit {
     demoLink: 'https://github.com/alishbarazzaq/Calculator-'
   },
   {
-    image: 'assets/images/P3.png',
-    title: 'Portfolio',
-    description: 'I created a complete portfolio website using the Angular framework.',
+    image: 'assets/images/P3.jpg',
+    title: 'BBC',
+    description: 'I created BBC website using HTML ,CSS .',
     tag: 'Frontend',
     demoLink: 'https://github.com/alishbarazzaq/Portfolio'
   }
 ];
-
-
   constructor() { }
 
   ngOnInit(): void {

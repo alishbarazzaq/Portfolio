@@ -1,5 +1,5 @@
 .skills-section {
-  padding: 50px;
+  padding: 50px 5%;
   background-color: white;
 
   .section-heading {
@@ -7,43 +7,38 @@
     margin-bottom: 50px;
 
     h2 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 2.5vw, 2.5rem); 
       color: #111;
       margin-bottom: 10px;
     }
 
-   p {
-  font-size: 1.3rem;
-  animation: colorPulse 2s infinite alternate;
-}
+    p {
+      font-size: clamp(1rem, 1.3vw, 1.3rem);
+      animation: colorPulse 2s infinite alternate;
+    }
 
-// Keyframes for color animation
-@keyframes colorPulse {
-  0% {
-    color: red;
-    text-shadow: 0 0 10px red;
-  }
-  100% {
-    color: #00d084;
-    text-shadow: 0 0 10px #00d084;
-  }
-}
-
-
+    @keyframes colorPulse {
+      0% { color: red; text-shadow: 0 0 10px red; }
+      100% { color: #00d084; text-shadow: 0 0 10px #00d084; }
+    }
   }
 
   .skills-grid {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 25px;
 
     .skill-bar {
+      display: flex;
+      flex-direction: column;
+
       .skill-title {
         font-weight: 600;
         margin-bottom: 5px;
         color: #333;
+        font-size: clamp(0.9rem, 1vw, 1.1rem);
       }
 
       .bar {
@@ -57,28 +52,56 @@
           height: 100%;
           background: linear-gradient(to right, #00d084, #4bd8a7);
           border-radius: 6px;
+          transition: width 0.5s ease-in-out;
         }
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    padding: 40px 5%;
+    .skills-grid { max-width: 750px; }
+  }
+
+  @media (max-width: 992px) {
+    padding: 35px 4%;
+    .skills-grid { max-width: 600px; gap: 20px; }
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 4%;
+    .section-heading h2 { font-size: 2rem; }
+    .section-heading p { font-size: 1.1rem; }
+    .skills-grid { gap: 18px; }
+    .skill-bar .bar { height: 10px; }
+  }
+
+  @media (max-width: 576px) {
+    padding: 25px 3%;
+    .section-heading h2 { font-size: 1.7rem; }
+    .section-heading p { font-size: 1rem; }
+    .skills-grid { gap: 15px; }
+    .skill-bar .bar { height: 8px; }
+  }
 }
+
 
 .services-section {
   padding: 80px 5%;
-  background-color: black;
+  background-color: #111;
   text-align: center;
 
   .section-heading {
     margin-bottom: 50px;
 
     h2 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 2.5vw, 2.5rem); 
       color: white;
       margin-bottom: 10px;
     }
 
-  p {
-      font-size: 1.1rem;
+    p {
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
       color: #00d084;
     }
   }
@@ -101,24 +124,47 @@
       }
 
       .service-icon {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 2.5vw, 2.5rem);
         color: #00d084;
         margin-bottom: 15px;
       }
 
       h3 {
-        font-size: 1.3rem;
+        font-size: clamp(1.1rem, 1.3vw, 1.3rem);
         margin-bottom: 10px;
         color: #111;
       }
 
       p {
-        font-size: 1rem;
-        color:black;
+        font-size: clamp(0.9rem, 1vw, 1rem);
+        color: black;
         line-height: 1.6;
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    padding: 70px 5%;
+    .services-grid { gap: 25px; }
+  }
+
+  @media (max-width: 992px) {
+    padding: 60px 4%;
+    .services-grid { gap: 20px; }
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 4%;
+    .services-grid { gap: 18px; }
+    .service-box { padding: 18px; }
+  }
+
+  @media (max-width: 576px) {
+    padding: 40px 3%;
+    .services-grid { gap: 15px; }
+    .service-box { padding: 15px; }
+    .service-icon { font-size: 2rem; }
+    h3 { font-size: 1.1rem; }
+    p { font-size: 0.9rem; }
+  }
 }
-
-

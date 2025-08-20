@@ -2,15 +2,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
-  
-  
- 
 })
 export class HomeComponent {
   showModal: boolean = false;
@@ -33,10 +28,6 @@ export class HomeComponent {
 
   closeVideoModal() {
     this.showModal = false;
-    // Stop video by resetting the iframe src
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl('');
   }
 }
-
-
-
